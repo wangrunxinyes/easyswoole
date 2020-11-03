@@ -234,7 +234,7 @@ class Core
             }
             $dispatcherClassName = Di::getInstance()->get(SysConst::HTTP_DISPATCHER_CLASSNAME);
             if (empty($dispatcherClassName)) {
-                $dispatcherClassName = \EasySwoole\Http\Dispatcher::class;
+                $dispatcherClassName = Dispatcher::class;
             }
             $dispatcher = $dispatcherClassName::getInstance($namespace, $depth, $max);
             $dispatcher->setControllerPoolWaitTime($waitTime);
