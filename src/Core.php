@@ -232,10 +232,11 @@ class Core
             if ($waitTime == 0) {
                 $waitTime = 5;
             }
-            $dispatcherClassName = Di::getInstance()->get(SysConst::HTTP_DISPATCHER_CLASSNAME);
-            if (empty($dispatcherClassName)) {
-                $dispatcherClassName = Dispatcher::class;
+            $dispatcherNameSpace = Di::getInstance()->get(SysConst::HTTP_DISPATCHER_NAMESPACE);
+            if (empty($dispatcherNameSpace)) {
+                $dispatcherNameSpace = "EasySwoole\\EasySwoole\\Http\\";
             }
+            $dispatcherClassName = $dispatcherNameSpace . "Dispatcher";
             $dispatcher = $dispatcherClassName::getInstance($namespace, $depth, $max);
             $dispatcher->setControllerPoolWaitTime($waitTime);
             //补充HTTP_EXCEPTION_HANDLER默认回调
