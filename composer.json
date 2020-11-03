@@ -29,7 +29,8 @@
 		"easyswoole/socket" : "^1.1",
 		"easyswoole/task" : "^1.1",
 		"easyswoole/command" : "^1.1",
-		"easyswoole/bridge" : "^1.0"
+		"easyswoole/bridge" : "^1.0",
+		"easyswoole/validate": "1.2.7"
 	},
 	"autoload" : {
 		"psr-4" : {
